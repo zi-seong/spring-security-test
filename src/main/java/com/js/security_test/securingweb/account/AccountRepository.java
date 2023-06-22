@@ -17,4 +17,8 @@ public class AccountRepository {
         accounts.put(account.getEmail(), account);
         return account;
     }
+
+    public Account findByEmail(String username) {
+        return accounts.get(username);
+    }
 }
