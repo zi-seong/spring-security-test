@@ -12,12 +12,14 @@ public class AccountController {
     @Autowired
     AccountRepository accountRepository;
 
+    @Autowired
+    AccountService accountService;
+
     @GetMapping("/create")
     public Account create() {
         Account account = new Account();
         account.setEmail("jspark@email.com");
         account.setPassword("password");
-        accountRepository.save(account);
-        return account;
+        return accountService.save(account);
     }
 }
